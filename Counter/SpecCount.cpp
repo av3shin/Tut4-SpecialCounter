@@ -8,13 +8,23 @@ public:
 	    SpecialCounter(); //Default constructor
 	    ~SpecialCounter(); //Default destructor
 
-		void norm(int n)
+		void norm(int strt, int end)
 		{
-			for (n; n < 255; n++)
-			cout << n << endl;
+			for (strt; strt < end; strt++)
+			cout << strt << endl;
 		}
-	    void Start();
-	    void Stop();
+
+		void Start(int strt)
+		{
+			cout << " Please enter a new value for Start: "<< endl;
+			cin >> strt;
+		
+		}
+		void Stop(int end)
+		{
+			cout << " Please enter a new value for End: " << endl;
+			cin >> end;
+		}
 
 		
 
@@ -29,6 +39,10 @@ private:
 int main()
 {
 	SpecialCounter mySpecCount;
-	int j = 0;
-	mySpecCount.norm(j);
+	int numA = 0;
+	int numB = 255;
+	mySpecCount.norm(numA, numB);
+	mySpecCount.Start(numA);
+	mySpecCount.Stop(numB);
+
 }
